@@ -35,11 +35,10 @@ public class Get07 extends AutoEBaseUrl {
         response.prettyPrint();
 
         //response.then().statusCode(200).contentType(ContentType.HTML);
-        JsonPath js=response.jsonPath();
-        js.prettyPrint();
+
 
        //List<String> usertype = js.getList("products.category.usertype.usertype");
-        List<String> userTypeList = js.getList("products.category.usertype.usertype");
+        List<String> userTypeList = response.jsonPath().getList("products.category");
 
         SoftAssert softAssert = new SoftAssert();
         int Women = 0;
